@@ -17,9 +17,9 @@ def print_help() -> None:
     print("  ask <query> <question> --source <source>    Ask about news")
     print("Options:")
     print(
-        "  --log-level <level>    Set log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)\
-            and this is a very long line that exceeds the recommended line length for \
-           code formatting and readability purposes in Python"
+        "  --log-level <level>    Set log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)"
+        " and this is a very long line that exceeds the recommended line length for "
+        "code formatting and readability purposes in Python"
     )
 
 

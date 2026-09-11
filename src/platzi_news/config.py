@@ -37,10 +37,10 @@ except ValidationError as e:
             for err in e.errors() if err["type"] == "missing"]
     if missing_keys:
         msg = (
-            f"Las siguientes claves de API no están configuradas: \
-                {', '.join(missing_keys)}. "
-            "Por favor, configure las variables de entorno en un archivo .env o en su \
-                sistema."
+            f"Las siguientes claves de API no están configuradas: "
+            f"{', '.join(missing_keys)}. "
+            "Por favor, configure las variables de entorno en un archivo .env o en su "
+            "sistema."
         )
         raise ConfigError(msg) from e
     else:

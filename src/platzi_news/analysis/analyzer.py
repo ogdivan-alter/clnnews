@@ -71,8 +71,8 @@ class OpenAIAnalyzer:
                 messages=[
                     {
                         "role": "system",
-                        "content": "You are a helpful assistant analyzing news \
-                            articles.",
+                        "content": "You are a helpful assistant analyzing news "
+                        "articles.",
                     },
                     {"role": "user", "content": prompt},
                 ],
@@ -117,8 +117,8 @@ def get_article_summaries(articles):
         if hasattr(article, "title"):
             summary = f"{article.title}: {article.description[:100]}..."
         else:
-            summary = f"{article.get('title', 'N/A')}: \
-                {article.get('description', 'N/A')[:100]}..."
+            summary = f"{article.get('title', 'N/A')}: "
+            f"{article.get('description', 'N/A')[:100]}..."
         summaries.append(summary)
     return summaries
 
