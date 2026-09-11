@@ -50,5 +50,6 @@ class NewsAPI(NewsSource):
             return articles
         except requests.RequestException as e:
             logger.error(f"Failed to fetch articles from NewsAPI: {e}")
-            msg = f"Error al obtener artículos de NewsAPI: {e}. Verifique su conexión a internet y la clave de API de NewsAPI."
+            msg = f"Error al obtener artículos de NewsAPI: {e}. Verifique su conexión \
+                a internet y la clave de API de NewsAPI."
             raise APIError(msg) from e

@@ -3,10 +3,10 @@
 import unittest
 
 from platzi_news.core.exceptions import (
-    PlatziNewsError,
-    ConfigError,
-    APIError,
     AnalysisError,
+    APIError,
+    ConfigError,
+    PlatziNewsError,
     SourceError,
 )
 

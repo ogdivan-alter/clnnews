@@ -1,10 +1,9 @@
 """Tests for config."""
 
 import unittest
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
 
 from platzi_news.config import Settings
-from platzi_news.core.exceptions import ConfigError
 
 
 class TestSettings(unittest.TestCase):

@@ -1,13 +1,12 @@
 """CLI interface for Platzi News."""
 
 import logging
-import os
 import sys
 from types import SimpleNamespace
 from typing import NoReturn
 
-from .display import display_answer, display_articles, display_error
 from ..core.services import NewsService
+from .display import display_answer, display_articles, display_error
 
 
 def print_help() -> None:
@@ -18,14 +17,15 @@ def print_help() -> None:
     print("  ask <query> <question> --source <source>    Ask about news")
     print("Options:")
     print(
-        "  --log-level <level>    Set log level (DEBUG, INFO, WARNING, ERROR, CRITICAL) and this is a very long line that exceeds the recommended line length for code formatting and readability purposes in Python"
+        "  --log-level <level>    Set log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)\
+            and this is a very long line that exceeds the recommended line length for \
+           code formatting and readability purposes in Python"
     )
 
 
 def parse_args() -> SimpleNamespace:
     """Parse command line arguments manually."""
     log_level = None
-    unused_var = "this is unused"
 
     # Check for --log-level and remove it
     if "--log-level" in sys.argv:

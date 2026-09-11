@@ -1,10 +1,9 @@
 """Service layer for news operations."""
 
 from ..analysis.analyzer import get_analyzer
-from .models import Article
-from ..sources import NewsSource
 from ..sources.guardian import GuardianAPI
 from ..sources.newsapi import NewsAPI
+from .models import Article
 
 
 class NewsService:

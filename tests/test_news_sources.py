@@ -5,8 +5,8 @@ from unittest.mock import Mock, patch
 
 import requests
 
-from platzi_news.core.services import NewsService
 from platzi_news.core.exceptions import APIError
+from platzi_news.core.services import NewsService
 from platzi_news.sources.guardian import GuardianAPI
 from platzi_news.sources.newsapi import NewsAPI
 
