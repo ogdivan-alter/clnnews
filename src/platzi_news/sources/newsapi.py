@@ -13,7 +13,7 @@ from . import NewsSource
 class NewsAPI(NewsSource):
     """News source for NewsAPI."""
 
-    BASE_URL = "https://newsapi.org/v2/everything"
+    BASE_URL = "https://api.thenewsapi.com/v1/news/all"
 
     def __init__(self):
         self.api_key = settings.newsapi_api_key
@@ -24,9 +24,9 @@ class NewsAPI(NewsSource):
         logger.debug(f"Fetching articles from NewsAPI for query: {query}")
 
         params = {
-            "q": query,
-            "apiKey": self.api_key,
-            "pageSize": settings.max_articles,
+            "search": query,
+            "api_token": self.api_key,
+            "limit": settings.max_articles,
             "language": "es",
         }
         try:
@@ -34,6 +34,8 @@ class NewsAPI(NewsSource):
             response = requests.get(
                 self.BASE_URL, params=params, timeout=settings.request_timeout
             )
+            print(f"Request URL: {response.request.url}")
+
             response.raise_for_status()
             data = response.json()
             articles = [
@@ -42,7 +44,7 @@ class NewsAPI(NewsSource):
                     description=article.get("description", ""),
                     url=article.get("url", ""),
                 )
-                for article in data.get("articles", [])
+                for article in data.get("data", [])
             ]
             logger.info(f"Retrieved {len(articles)} articles from NewsAPI")
             return articles

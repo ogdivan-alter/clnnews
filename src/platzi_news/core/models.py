@@ -10,3 +10,6 @@ class Article:
     title: str
     description: str
     url: str
+
+    def get(self, key: str, default=None):
+        return getattr(self, key, default)
