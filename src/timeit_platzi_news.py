@@ -31,12 +31,22 @@ def test_performance() -> None:
     for size in sizes:
         articles = create_test_articles(size)
 
+        def run_check(
+            articles: list[Article] = articles,
+        ) -> list[tuple[Article, Article]]:
+            return find_duplicate_titles(articles=articles)
+
+        def run_check_improved(
+            articles: list[Article] = articles,
+        ) -> list[tuple[Article, Article]]:
+            return find_duplicate_titles_improved(articles=articles)
+
         time_original = timeit.timeit(
-            lambda: find_duplicate_titles(articles),
+            run_check,
             number=1,
         )
         time_improved = timeit.timeit(
-            lambda: find_duplicate_titles_improved(articles),
+            run_check_improved,
             number=1,
         )
 
