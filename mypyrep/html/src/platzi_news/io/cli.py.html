@@ -172,7 +172,7 @@
 <span class="line-precise" title="No Anys on this line!">            sys.exit(1)</span>
 <span class="line-precise" title="No Anys on this line!">        query = sys.argv[2]</span>
 <span class="line-precise" title="No Anys on this line!">        source = sys.argv[4]</span>
-<span class="line-any" title="Any Types on this line: 
+<span class="line-any" title="Any Types on this line:
 Explicit (x3)">        return SimpleNamespace(</span>
 <span class="line-precise" title="No Anys on this line!">            command=command, query=query, source=source, log_level=log_level</span>
 <span class="line-empty" title="No Anys on this line!">        )</span>
@@ -183,7 +183,7 @@ Explicit (x3)">        return SimpleNamespace(</span>
 <span class="line-precise" title="No Anys on this line!">        query = sys.argv[2]</span>
 <span class="line-precise" title="No Anys on this line!">        question = sys.argv[3]</span>
 <span class="line-precise" title="No Anys on this line!">        source = sys.argv[5]</span>
-<span class="line-any" title="Any Types on this line: 
+<span class="line-any" title="Any Types on this line:
 Explicit (x3)">        return SimpleNamespace(</span>
 <span class="line-precise" title="No Anys on this line!">            command=command,</span>
 <span class="line-precise" title="No Anys on this line!">            query=query,</span>
@@ -201,10 +201,10 @@ Explicit (x3)">        return SimpleNamespace(</span>
 <span class="line-precise" title="No Anys on this line!">    args = parse_args()</span>
 <span class="line-empty" title="No Anys on this line!"></span>
 <span class="line-empty" title="No Anys on this line!">    # Configure logging only if --log-level is provided</span>
-<span class="line-any" title="Any Types on this line: 
+<span class="line-any" title="Any Types on this line:
 Explicit (x1)">    if args.log_level:</span>
 <span class="line-precise" title="No Anys on this line!">        logging.basicConfig(</span>
-<span class="line-any" title="Any Types on this line: 
+<span class="line-any" title="Any Types on this line:
 Explicit (x14)
 Omitted Generics (x2)">            level=getattr(logging, args.log_level),</span>
 <span class="line-precise" title="No Anys on this line!">            format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",</span>
@@ -213,29 +213,29 @@ Omitted Generics (x2)">            level=getattr(logging, args.log_level),</span
 <span class="line-empty" title="No Anys on this line!"></span>
 <span class="line-empty" title="No Anys on this line!">    try:</span>
 <span class="line-precise" title="No Anys on this line!">        service = NewsService()</span>
-<span class="line-any" title="Any Types on this line: 
+<span class="line-any" title="Any Types on this line:
 Explicit (x2)">        if args.command == "search":</span>
-<span class="line-any" title="Any Types on this line: 
+<span class="line-any" title="Any Types on this line:
 Explicit (x2)">            logger.info(f"Searching for '{args.query}' in {args.source}")</span>
-<span class="line-any" title="Any Types on this line: 
+<span class="line-any" title="Any Types on this line:
 Unannotated (x5)
 Explicit (x2)">            articles = service.search_articles(args.source, args.query)</span>
-<span class="line-any" title="Any Types on this line: 
+<span class="line-any" title="Any Types on this line:
 Unannotated (x1)">            logger.info(f"Found {len(articles)} articles")</span>
-<span class="line-any" title="Any Types on this line: 
+<span class="line-any" title="Any Types on this line:
 Unannotated (x1)">            display_articles(articles)</span>
-<span class="line-any" title="Any Types on this line: 
+<span class="line-any" title="Any Types on this line:
 Explicit (x2)">        elif args.command == "ask":</span>
 <span class="line-precise" title="No Anys on this line!">            logger.info(</span>
-<span class="line-any" title="Any Types on this line: 
+<span class="line-any" title="Any Types on this line:
 Explicit (x3)">                f"Asking '{args.question}' about '{args.query}' from {args.source}"</span>
 <span class="line-empty" title="No Anys on this line!">            )</span>
-<span class="line-any" title="Any Types on this line: 
+<span class="line-any" title="Any Types on this line:
 Unannotated (x5)
 Explicit (x2)">            articles = service.search_articles(args.source, args.query)</span>
-<span class="line-any" title="Any Types on this line: 
+<span class="line-any" title="Any Types on this line:
 Unannotated (x1)">            logger.info(f"Retrieved {len(articles)} articles for analysis")</span>
-<span class="line-any" title="Any Types on this line: 
+<span class="line-any" title="Any Types on this line:
 Unannotated (x1)
 Explicit (x1)">            answer = service.analyze_articles(articles, args.question)</span>
 <span class="line-precise" title="No Anys on this line!">            logger.info("Analysis completed successfully")</span>

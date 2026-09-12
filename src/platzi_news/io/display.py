@@ -1,6 +1,5 @@
 """Display utilities for Platzi News."""
 
-
 from rich.console import Console
 
 from ..core.models import Article
